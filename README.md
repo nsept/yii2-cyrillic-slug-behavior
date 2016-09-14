@@ -1,4 +1,4 @@
-# Yii2-Cyrillic-Slug-Behavior
+# Yii2 Cyrillic Slug Behavior
 
 ## Install
 ```bash
