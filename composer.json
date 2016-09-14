@@ -1,0 +1,27 @@
+{
+  "name": "nsept/yii2-cyrillic-slug-behavior",
+  "description": "Yii2 Cyrillic Slug Behavior",
+  "type": "yii2-extension",
+  "keywords": [
+    "yii",
+    "yii2",
+    "cyrillic",
+    "slug",
+    "behavior"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Nsept",
+      "email": "nsept@ya.ru"
+    }
+  ],
+  "require": {
+    "yiisoft/yii2": "~2.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "nsept\\behaviors\\": ""
+    }
+  }
+}
