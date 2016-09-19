@@ -2,6 +2,8 @@
 
 namespace nsept\behaviors;
 
+use yii\db\BaseActiveRecord;
+
 class CyrillicSlugBehavior extends \yii\behaviors\SluggableBehavior
 {
     /**
@@ -16,6 +18,20 @@ class CyrillicSlugBehavior extends \yii\behaviors\SluggableBehavior
      * @inheritdoc
      */
     public $ensureUnique = true;
+
+    public function init()
+    {
+        if (empty($this->attributes)) {
+            $this->attributes = [
+                BaseActiveRecord::EVENT_BEFORE_INSERT => $this->slugAttribute,
+                BaseActiveRecord::EVENT_BEFORE_UPDATE => $this->slugAttribute,
+            ];
+        }
+
+        if ($this->attribute === null && $this->value === null) {
+            throw new InvalidConfigException('Either "attribute" or "value" property must be specified.');
+        }
+    }
 
     /**
      * Generate a URL friendly "slug" from a given Cyrillic string.
